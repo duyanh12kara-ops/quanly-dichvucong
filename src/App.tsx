@@ -43,12 +43,14 @@ const App: React.FC = () => {
   const [view, setView] = useState<'list' | 'dashboard' | 'safety'>('list');
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingRecord, setEditingRecord] = useState<CustomerRecord | null>(null);
-
+  const [loading, setLoading] = useState(true); // Thêm dòng này vào dưới dòng 45
   useEffect(() => {
     const q = query(collection(db, "records"), orderBy("date", "desc"));
     const unsubRecords = onSnapshot(q, snap => {
       const fetchedRecords = snap.docs.map(doc => ({ ...doc.data(), id: doc.id }) as CustomerRecord);
       setRecords(fetchedRecords);
+      setRecords(fetchedRecords);
+setLoading(false); // <--- THÊM DÒNG NÀY VÀO ĐÂY
     });
     
     const unsubServices = onSnapshot(collection(db, "services"), snap => {
