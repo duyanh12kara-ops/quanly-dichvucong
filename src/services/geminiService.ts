@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { CustomerRecord } from "../types";
 
 // Always use const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 export const analyzeRecords = async (records: CustomerRecord[]) => {
   const model = 'gemini-3-flash-preview';
