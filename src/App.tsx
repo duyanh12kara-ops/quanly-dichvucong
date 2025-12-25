@@ -194,3 +194,4 @@ setLoading(false); // <--- THÊM DÒNG NÀY VÀO ĐÂY
 };
 
 export default App;
+// Cập nhật cuối cùng: 25/12/2025
