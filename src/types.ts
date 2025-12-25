@@ -1,3 +1,4 @@
+
 export enum ServiceStatus {
   PENDING = 'Chờ xử lý',
   PROCESSING = 'Đang xử lý',
@@ -11,7 +12,7 @@ export interface CustomerRecord {
   customerName: string;
   serviceType: string;
   documentsProvided: string;
-  documentLink?: string;
+  documentLink?: string; // Trường mới cho link Google Drive
   returnDate?: string;
   status: ServiceStatus;
   note?: string;
@@ -21,5 +22,5 @@ export interface DashboardStats {
   total: number;
   pending: number;
   completed: number;
-  // p đã được xóa bỏ để tránh lỗi build
+  processing: number;
 }
